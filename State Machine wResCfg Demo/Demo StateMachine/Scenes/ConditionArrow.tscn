@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://cnmmti54lott4"]
+
+[ext_resource type="Texture2D" uid="uid://cihw3rmxleqal" path="res://Demo StateMachine/Textures/arrow9-90deg-right_001.png" id="1_pc08j"]
+
+[node name="ConditionArrow" type="NinePatchRect"]
+offset_left = 833.0
+offset_top = 127.0
+offset_right = 1722.0
+offset_bottom = 1013.0
+rotation = 1.5708
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_pc08j")
+patch_margin_left = 79
+patch_margin_top = 259
+patch_margin_right = 166
+patch_margin_bottom = 60
+
+[node name="ConditionText" type="Label" parent="."]
+layout_mode = 0
+offset_left = -348.0
+offset_top = 100.001
+offset_right = -225.0
+offset_bottom = 178.001
+rotation = -1.5708
+scale = Vector2(3, 3)
+text = "condition text1
+condition text2
+condition text3"

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="VariableRelationConditionRES" load_steps=2 format=3 uid="uid://bo8vgb177bi3t"]
+
+[ext_resource type="Script" path="res://Demo StateMachine/Scripts/Conditions/VariableRelationConditionRES.cs" id="1_30gf0"]
+
+[resource]
+resource_name = "ivariableLessZero"
+script = ExtResource("1_30gf0")
+variable = 0
+relation = 2
+value = 0

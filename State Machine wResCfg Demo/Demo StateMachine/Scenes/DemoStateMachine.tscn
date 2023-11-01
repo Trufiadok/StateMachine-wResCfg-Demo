@@ -1,0 +1,265 @@
+[gd_scene load_steps=9 format=3 uid="uid://dlcpgr3ve6qj7"]
+
+[ext_resource type="Script" path="res://addons/StateMachine/Core/StateMachine.cs" id="1_iui8y"]
+[ext_resource type="Script" path="res://Demo StateMachine/Scripts/DemoStateMachine.cs" id="1_ua2o3"]
+[ext_resource type="Resource" uid="uid://dfeh4tdy2ld7b" path="res://Demo StateMachine/Resources/DemoTransitionTable.tres" id="2_mw3ni"]
+[ext_resource type="PackedScene" uid="uid://bge2308bosgsk" path="res://Demo StateMachine/Scenes/State.tscn" id="3_xvilx"]
+[ext_resource type="PackedScene" uid="uid://cnmmti54lott4" path="res://Demo StateMachine/Scenes/ConditionArrow.tscn" id="4_ksyfn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fyx5v"]
+bg_color = Color(0.360784, 0.239216, 0.501961, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cf5h6"]
+bg_color = Color(0.423529, 0.356863, 0.501961, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0viqb"]
+bg_color = Color(0.258824, 0.0431373, 0.501961, 1)
+
+[node name="DemoStateMachine" type="Node"]
+script = ExtResource("1_ua2o3")
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource("1_iui8y")
+_transitionTableRES = ExtResource("2_mw3ni")
+
+[node name="UI" type="Node" parent="."]
+
+[node name="A_State" parent="UI" instance=ExtResource("3_xvilx")]
+position = Vector2(568, 120)
+
+[node name="StateTitle" parent="UI/A_State/ColorRect" index="0"]
+text = "A state"
+
+[node name="XtoYcondition" parent="UI/A_State/ColorRect" index="1"]
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_fyx5v")
+theme_override_styles/hover = SubResource("StyleBoxFlat_cf5h6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0viqb")
+text = "A -> B
+condition"
+
+[node name="XtoZcondition" parent="UI/A_State/ColorRect" index="2"]
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_fyx5v")
+theme_override_styles/hover = SubResource("StyleBoxFlat_cf5h6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0viqb")
+text = "A -> D
+condition"
+
+[node name="aStatus" type="ColorRect" parent="UI/A_State/ColorRect" index="4"]
+layout_mode = 0
+offset_left = 164.0
+offset_top = 12.0
+offset_right = 188.0
+offset_bottom = 36.0
+color = Color(1, 0, 0, 1)
+
+[node name="B_State" parent="UI" instance=ExtResource("3_xvilx")]
+position = Vector2(856, 328)
+
+[node name="StateTitle" parent="UI/B_State/ColorRect" index="0"]
+text = "B state"
+
+[node name="XtoYcondition" parent="UI/B_State/ColorRect" index="1"]
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_fyx5v")
+theme_override_styles/hover = SubResource("StyleBoxFlat_cf5h6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0viqb")
+text = "B -> C
+condition"
+
+[node name="XtoZcondition" parent="UI/B_State/ColorRect" index="2"]
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_fyx5v")
+theme_override_styles/hover = SubResource("StyleBoxFlat_cf5h6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0viqb")
+text = "B -> A
+condition"
+
+[node name="bStatus" type="ColorRect" parent="UI/B_State/ColorRect" index="4"]
+layout_mode = 0
+offset_left = 164.0
+offset_top = 12.0
+offset_right = 188.0
+offset_bottom = 36.0
+color = Color(1, 0, 0, 1)
+
+[node name="C_State" parent="UI" instance=ExtResource("3_xvilx")]
+position = Vector2(576, 528)
+
+[node name="StateTitle" parent="UI/C_State/ColorRect" index="0"]
+text = "C state"
+
+[node name="XtoYcondition" parent="UI/C_State/ColorRect" index="1"]
+visible = false
+
+[node name="XtoZcondition" parent="UI/C_State/ColorRect" index="2"]
+visible = false
+
+[node name="cStatus" type="ColorRect" parent="UI/C_State/ColorRect" index="4"]
+layout_mode = 0
+offset_left = 164.0
+offset_top = 12.0
+offset_right = 188.0
+offset_bottom = 36.0
+color = Color(1, 0, 0, 1)
+
+[node name="D_State" parent="UI" instance=ExtResource("3_xvilx")]
+position = Vector2(280, 328)
+
+[node name="StateTitle" parent="UI/D_State/ColorRect" index="0"]
+text = "D state"
+
+[node name="XtoYcondition" parent="UI/D_State/ColorRect" index="1"]
+visible = false
+
+[node name="XtoZcondition" parent="UI/D_State/ColorRect" index="2"]
+visible = false
+text = "C -> A
+condition"
+
+[node name="dStatus" type="ColorRect" parent="UI/D_State/ColorRect" index="4"]
+layout_mode = 0
+offset_left = 164.0
+offset_top = 12.0
+offset_right = 188.0
+offset_bottom = 36.0
+color = Color(1, 0, 0, 1)
+
+[node name="AtoB_ConArr" parent="UI" instance=ExtResource("4_ksyfn")]
+offset_left = 889.0
+offset_top = 119.0
+offset_right = 1335.0
+offset_bottom = 992.0
+
+[node name="ConditionText" parent="UI/AtoB_ConArr" index="0"]
+offset_left = 68.002
+offset_top = 548.0
+offset_right = 191.002
+offset_bottom = 626.0
+text = "&&  i > 10
+&&  j < 20
+||  A->B button"
+
+[node name="BtoA_ConArr" parent="UI" instance=ExtResource("4_ksyfn")]
+offset_left = 585.0
+offset_top = 339.0
+offset_right = 1063.0
+offset_bottom = 1030.0
+rotation = -1.5708
+
+[node name="ConditionText" parent="UI/BtoA_ConArr" index="0"]
+offset_left = 236.0
+offset_top = 220.0
+offset_right = 359.0
+offset_bottom = 298.0
+rotation = 1.5708
+text = "&& i > 15
+&& BtoA button"
+
+[node name="DtoA_ConArr" parent="UI" instance=ExtResource("4_ksyfn")]
+offset_left = 272.0
+offset_top = 96.0
+offset_right = 1064.0
+offset_bottom = 640.0
+rotation = 0.0
+
+[node name="ConditionText" parent="UI/DtoA_ConArr" index="0"]
+offset_left = 96.0
+offset_top = 160.0
+offset_right = 219.0
+offset_bottom = 238.0
+rotation = 0.0
+text = "&& i < 0
+&& j < 0"
+
+[node name="BtoC_ConArr" parent="UI" instance=ExtResource("4_ksyfn")]
+offset_left = 864.0
+offset_top = 560.0
+offset_right = 1622.0
+offset_bottom = 1090.0
+rotation = -3.14159
+
+[node name="ConditionText" parent="UI/BtoC_ConArr" index="0"]
+offset_left = 480.0
+offset_top = 320.0
+offset_right = 603.0
+offset_bottom = 398.0
+rotation = -3.14159
+text = "&& j > 100
+&& BtoC button"
+
+[node name="AtoD_ConArr" parent="UI" instance=ExtResource("4_ksyfn")]
+offset_left = 526.0
+offset_top = 360.0
+offset_right = 1113.0
+offset_bottom = 926.0
+rotation = -3.14159
+
+[node name="ConditionText" parent="UI/AtoD_ConArr" index="0"]
+offset_left = 440.0
+offset_top = 352.0
+offset_right = 564.0
+offset_bottom = 430.0
+rotation = -3.14159
+text = "&& AtoD button"
+
+[node name="Variables" type="ColorRect" parent="UI"]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 200.0
+offset_bottom = 120.0
+color = Color(0.588124, 0.206409, 0.584242, 1)
+
+[node name="iVariable" type="Label" parent="UI/Variables"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 24.0
+offset_right = 101.0
+offset_bottom = 50.0
+text = "iVariable :  "
+vertical_alignment = 1
+
+[node name="iValue" type="SpinBox" parent="UI/Variables/iVariable"]
+layout_mode = 0
+offset_left = 88.0
+offset_top = -5.0
+offset_right = 152.0
+offset_bottom = 26.0
+min_value = -200.0
+max_value = 200.0
+custom_arrow_step = 1.0
+
+[node name="jVariable" type="Label" parent="UI/Variables"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 62.0
+offset_right = 101.0
+offset_bottom = 88.0
+text = "jVariable :  "
+vertical_alignment = 1
+
+[node name="jValue" type="SpinBox" parent="UI/Variables/jVariable"]
+layout_mode = 0
+offset_left = 88.0
+offset_top = -5.0
+offset_right = 152.0
+offset_bottom = 26.0
+min_value = -200.0
+max_value = 200.0
+custom_arrow_step = 1.0
+
+[connection signal="pressed" from="UI/A_State/ColorRect/XtoYcondition" to="." method="AtoB_OnButtonPressed"]
+[connection signal="pressed" from="UI/A_State/ColorRect/XtoZcondition" to="." method="AtoD_OnButtonPressed"]
+[connection signal="pressed" from="UI/B_State/ColorRect/XtoYcondition" to="." method="BtoC_OnButtonPressed"]
+[connection signal="pressed" from="UI/B_State/ColorRect/XtoZcondition" to="." method="BtoA_OnButtonPressed"]
+
+[editable path="UI/A_State"]
+[editable path="UI/B_State"]
+[editable path="UI/C_State"]
+[editable path="UI/D_State"]
+[editable path="UI/AtoB_ConArr"]
+[editable path="UI/BtoA_ConArr"]
+[editable path="UI/DtoA_ConArr"]
+[editable path="UI/BtoC_ConArr"]
+[editable path="UI/AtoD_ConArr"]

@@ -1,0 +1,129 @@
+[gd_resource type="Resource" script_class="TransitionTableRES" load_steps=33 format=3 uid="uid://dfeh4tdy2ld7b"]
+
+[ext_resource type="Resource" uid="uid://c8baqj7af3vcx" path="res://Demo StateMachine/Resources/Conditions/IvariableGreaterTen.tres" id="1_4bhw1"]
+[ext_resource type="Script" path="res://addons/StateMachine/Resources/TransitionTableRES.cs" id="1_ko2ft"]
+[ext_resource type="Script" path="res://addons/StateMachine/Resources/ConditionUsage.cs" id="1_xd5p3"]
+[ext_resource type="Resource" uid="uid://dnoqb4cb3gisa" path="res://Demo StateMachine/Resources/States/A_State.tres" id="2_dbx7w"]
+[ext_resource type="Resource" uid="uid://bnol3qsujap5f" path="res://Demo StateMachine/Resources/Conditions/JvariableLessTwenty.tres" id="3_1aah2"]
+[ext_resource type="Resource" uid="uid://mdq6d05srmpp" path="res://Demo StateMachine/Resources/States/B_State.tres" id="3_wevku"]
+[ext_resource type="Script" path="res://addons/StateMachine/Resources/TransitionItem.cs" id="4_n1lgc"]
+[ext_resource type="Resource" uid="uid://cbkc66rwd7uek" path="res://Demo StateMachine/Resources/Conditions/AtoBbuttonCondition.tres" id="4_qib45"]
+[ext_resource type="Resource" uid="uid://dhci1rourrej8" path="res://Demo StateMachine/Resources/Conditions/iVariableGreaterFifteen.tres" id="7_21c26"]
+[ext_resource type="Resource" uid="uid://d3owa8yp4hksc" path="res://Demo StateMachine/Resources/Conditions/jVariableGreaterHundred.tres" id="8_xjfm4"]
+[ext_resource type="Resource" uid="uid://cf6vdqfk8g6sy" path="res://Demo StateMachine/Resources/Conditions/BtoAbuttonCondition.tres" id="9_ngwng"]
+[ext_resource type="Resource" uid="uid://davekr3gssu1a" path="res://Demo StateMachine/Resources/States/C_State.tres" id="9_vhgy1"]
+[ext_resource type="Resource" uid="uid://dyjmrc25pwgab" path="res://Demo StateMachine/Resources/States/D_State.tres" id="10_q22m1"]
+[ext_resource type="Resource" uid="uid://ba0lvfotu3k1j" path="res://Demo StateMachine/Resources/Conditions/BtoCbuttonCondition.tres" id="11_0vrw1"]
+[ext_resource type="Resource" uid="uid://bo8vgb177bi3t" path="res://Demo StateMachine/Resources/Conditions/ivariableLessZero.tres" id="11_khbxe"]
+[ext_resource type="Resource" uid="uid://dyuw1irlso2nd" path="res://Demo StateMachine/Resources/Conditions/JvariableLessZero.tres" id="12_dyh2n"]
+[ext_resource type="Resource" uid="uid://f8ijnxo52kvb" path="res://Demo StateMachine/Resources/Conditions/AtoDbuttonCondition.tres" id="12_n3l3p"]
+
+[sub_resource type="Resource" id="Resource_fkk4e"]
+resource_name = "i > 10 &&"
+script = ExtResource("1_xd5p3")
+ExpectedResult = 0
+Condition = ExtResource("1_4bhw1")
+Operator = 0
+
+[sub_resource type="Resource" id="Resource_4nk2s"]
+resource_name = "j < 20 ||"
+script = ExtResource("1_xd5p3")
+ExpectedResult = 0
+Condition = ExtResource("3_1aah2")
+Operator = 1
+
+[sub_resource type="Resource" id="Resource_bwp1f"]
+resource_name = "A->B button &&"
+script = ExtResource("1_xd5p3")
+ExpectedResult = 0
+Condition = ExtResource("4_qib45")
+Operator = 0
+
+[sub_resource type="Resource" id="Resource_rxqq0"]
+resource_name = "A -> B"
+script = ExtResource("4_n1lgc")
+FromState = ExtResource("2_dbx7w")
+ToState = ExtResource("3_wevku")
+Conditions = Array[Object]([SubResource("Resource_fkk4e"), SubResource("Resource_4nk2s"), SubResource("Resource_bwp1f")])
+
+[sub_resource type="Resource" id="Resource_bkrws"]
+resource_name = "i > 15 &&"
+script = ExtResource("1_xd5p3")
+ExpectedResult = 0
+Condition = ExtResource("7_21c26")
+Operator = 0
+
+[sub_resource type="Resource" id="Resource_a2dkw"]
+resource_name = "B->A button &&"
+script = ExtResource("1_xd5p3")
+ExpectedResult = 0
+Condition = ExtResource("9_ngwng")
+Operator = 0
+
+[sub_resource type="Resource" id="Resource_v2ks7"]
+resource_name = "B -> A"
+script = ExtResource("4_n1lgc")
+FromState = ExtResource("3_wevku")
+ToState = ExtResource("2_dbx7w")
+Conditions = Array[Object]([SubResource("Resource_bkrws"), SubResource("Resource_a2dkw")])
+
+[sub_resource type="Resource" id="Resource_p40r8"]
+resource_name = "j > 100 &&"
+script = ExtResource("1_xd5p3")
+ExpectedResult = 0
+Condition = ExtResource("8_xjfm4")
+Operator = 0
+
+[sub_resource type="Resource" id="Resource_gmtbe"]
+resource_name = "B->C button &&"
+script = ExtResource("1_xd5p3")
+ExpectedResult = 0
+Condition = ExtResource("11_0vrw1")
+Operator = 0
+
+[sub_resource type="Resource" id="Resource_3rni0"]
+resource_name = "B -> C"
+script = ExtResource("4_n1lgc")
+FromState = ExtResource("3_wevku")
+ToState = ExtResource("9_vhgy1")
+Conditions = Array[Object]([SubResource("Resource_p40r8"), SubResource("Resource_gmtbe")])
+
+[sub_resource type="Resource" id="Resource_sevdm"]
+resource_name = "A->D button &&"
+script = ExtResource("1_xd5p3")
+ExpectedResult = 0
+Condition = ExtResource("12_n3l3p")
+Operator = 0
+
+[sub_resource type="Resource" id="Resource_63n2h"]
+resource_name = "A -> D"
+script = ExtResource("4_n1lgc")
+FromState = ExtResource("2_dbx7w")
+ToState = ExtResource("10_q22m1")
+Conditions = Array[Object]([SubResource("Resource_sevdm")])
+
+[sub_resource type="Resource" id="Resource_ey8ba"]
+resource_name = "i < 0 && "
+script = ExtResource("1_xd5p3")
+ExpectedResult = 0
+Condition = ExtResource("11_khbxe")
+Operator = 0
+
+[sub_resource type="Resource" id="Resource_good0"]
+resource_name = "j < 0 && "
+script = ExtResource("1_xd5p3")
+ExpectedResult = 0
+Condition = ExtResource("12_dyh2n")
+Operator = 0
+
+[sub_resource type="Resource" id="Resource_6whpm"]
+resource_name = "D -> A"
+script = ExtResource("4_n1lgc")
+FromState = ExtResource("10_q22m1")
+ToState = ExtResource("2_dbx7w")
+Conditions = Array[Object]([SubResource("Resource_ey8ba"), SubResource("Resource_good0")])
+
+[resource]
+resource_name = "DemoTransitionTable"
+script = ExtResource("1_ko2ft")
+_transitions = Array[Object]([SubResource("Resource_rxqq0"), SubResource("Resource_v2ks7"), SubResource("Resource_3rni0"), SubResource("Resource_63n2h"), SubResource("Resource_6whpm")])

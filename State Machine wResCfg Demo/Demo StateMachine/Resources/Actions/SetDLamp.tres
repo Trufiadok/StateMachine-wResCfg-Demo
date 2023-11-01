@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="SetStateLampRES" load_steps=2 format=3 uid="uid://cnm22mw8am2wr"]
+
+[ext_resource type="Script" path="res://Demo StateMachine/Scripts/Actions/SetStateLampRES.cs" id="1_h2brb"]
+
+[resource]
+resource_name = "SetDLamp"
+script = ExtResource("1_h2brb")
+lamp = 3

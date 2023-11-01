@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="StateRES" load_steps=3 format=3 uid="uid://dyjmrc25pwgab"]
+
+[ext_resource type="Resource" uid="uid://cnm22mw8am2wr" path="res://Demo StateMachine/Resources/Actions/SetDLamp.tres" id="1_vndeh"]
+[ext_resource type="Script" path="res://addons/StateMachine/Resources/StateRES.cs" id="1_xajgt"]
+
+[resource]
+resource_name = "D_State"
+script = ExtResource("1_xajgt")
+_actions = Array[Object]([ExtResource("1_vndeh")])

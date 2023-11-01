@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="StateRES" load_steps=3 format=3 uid="uid://mdq6d05srmpp"]
+
+[ext_resource type="Resource" uid="uid://dr67wh3x23wgv" path="res://Demo StateMachine/Resources/Actions/SetBLamp.tres" id="1_kwpb3"]
+[ext_resource type="Script" path="res://addons/StateMachine/Resources/StateRES.cs" id="1_uu7y8"]
+
+[resource]
+resource_name = "B_State"
+script = ExtResource("1_uu7y8")
+_actions = Array[Object]([ExtResource("1_kwpb3")])

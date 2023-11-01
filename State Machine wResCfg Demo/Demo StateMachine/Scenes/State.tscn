@@ -1,0 +1,64 @@
+[gd_scene load_steps=2 format=3 uid="uid://bge2308bosgsk"]
+
+[ext_resource type="Texture2D" uid="uid://ufbhg2fuc46v" path="res://Demo StateMachine/Textures/Rounded9Rectangle_001.png" id="1_ygmek"]
+
+[node name="State" type="Node2D"]
+
+[node name="ColorRect" type="NinePatchRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 100.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ygmek")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="StateTitle" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 196.0
+offset_bottom = 36.0
+text = "X state"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="XtoYcondition" type="Button" parent="ColorRect"]
+layout_mode = 0
+offset_left = 108.0
+offset_top = 131.0
+offset_right = 189.0
+offset_bottom = 185.0
+text = "X -> Y
+condition"
+
+[node name="XtoZcondition" type="Button" parent="ColorRect"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 131.0
+offset_right = 93.0
+offset_bottom = 185.0
+text = "X -> Z
+condition"
+
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 44.0
+offset_right = 364.0
+offset_bottom = 204.0
+scale = Vector2(0.5, 0.5)
+text = "OnStateEnter()
+
+OnUpdate()
+
+OnStateExit()"

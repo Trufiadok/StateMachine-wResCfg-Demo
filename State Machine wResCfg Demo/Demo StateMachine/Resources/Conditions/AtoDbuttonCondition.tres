@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="ButtonStatusConditionRES" load_steps=2 format=3 uid="uid://f8ijnxo52kvb"]
+
+[ext_resource type="Script" path="res://Demo StateMachine/Scripts/Conditions/ButtonStatusConditionRES.cs" id="1_gihgg"]
+
+[resource]
+resource_name = "AtoDbuttonCondition"
+script = ExtResource("1_gihgg")
+button = 0
