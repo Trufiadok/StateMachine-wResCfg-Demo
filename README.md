@@ -83,7 +83,7 @@ A class (SetStateLampRES.cs) belonging to *SetBlamp.tres* describes what to do w
 - if it exit the state: `OnStateExit()` -> `demoStateMachine.bLamp = false;`
 - if it is in the state: `OnUpdate()` -> *in this case it does nothing*
 
-The condition for crossing is the following condition: i > 10 && j < 20 || A->B button
+The transition condition is as follows: i > 10 && j < 20 || A->B button
 
 If the logical result of the elements of the *ConditionUsage* array is true, then the transition occurs.
 
