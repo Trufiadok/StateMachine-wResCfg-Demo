@@ -78,7 +78,7 @@ From State: `A_State` (A_State.tres)
 To State: `B_State` (B_State.tres)
 
 Actions: `SetBLamp` (SetBLamp.tres) 'action for B_State'
-A class (SetStateLampRES.cs) belonging to *SetBlamp.tres* describes what to do when:
+A class (SetStateLampRES.cs) includes *SetBlamp.tres* describes what to do when:
 - if it enter the state: `OnStateEnter()` -> `demoStateMachine.bLamp = true;`
 - if it exit the state: `OnStateExit()` -> `demoStateMachine.bLamp = false;`
 - if it is in the state: `OnUpdate()` -> *in this case it does nothing*
@@ -89,6 +89,6 @@ If the logical result of the elements of the *ConditionUsage* array is true, the
 
 `A->B button &&` *ConditionUsage* will be true if:
 - Expected Result: `True` -> the result of the *Condition* is true,
-- Condition: `AtoBbuttonCondition` (AtoBbuttonCondition.tres) is fulfilled. The class (ButtonStatusConditionRES.cs) belonging to *AtoBbuttonCondition.tres* describes how the result of the condition is formed:  `bool state = demoStateMachine.AtoBbutton;`,
+- Condition: `AtoBbuttonCondition` (AtoBbuttonCondition.tres) is fulfilled. The class (ButtonStatusConditionRES.cs) includes *AtoBbuttonCondition.tres* describes how the result of the condition is formed:  `bool state = demoStateMachine.AtoBbutton;`,
 - Operator: `And` -> logical connection with the following *ConditionUsage*.
 (In this case it doesn't matter since there is no next element)
