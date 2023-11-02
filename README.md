@@ -72,15 +72,21 @@ The conditions determine which state the state machine enters.
 ![enter image description here](https://github.com/Trufiadok/StateMachine-wResCfg-Demo/blob/main/Docs/AtoB%20TransitionItem.png)
 
 The image above shows the *TransitionItem* controlling from state A to state B.
+
 From State: `A_State` (A_State.tres)
+
 To State: `B_State` (B_State.tres)
+
 Actions: `SetBLamp` (SetBLamp.tres) 'action for B_State'
-	A class (SetStateLampRES.cs) belonging to *SetBlamp.tres* describes what to do when:
-		- if it enter the state: `OnStateEnter()` -> `demoStateMachine.bLamp = true;`
-		- if it exit the state: `OnStateExit()` -> `demoStateMachine.bLamp = false;`
-		- if it is in the state: `OnUpdate()` -> *in this case it does nothing*
+A class (SetStateLampRES.cs) belonging to *SetBlamp.tres* describes what to do when:
+	- if it enter the state: `OnStateEnter()` -> `demoStateMachine.bLamp = true;`
+	- if it exit the state: `OnStateExit()` -> `demoStateMachine.bLamp = false;`
+	- if it is in the state: `OnUpdate()` -> *in this case it does nothing*
+
 The condition for crossing is the following condition: i > 10 && j < 20 || A->B button
+
 If the logical result of the elements of the *ConditionUsage* array is true, then the transition occurs.
+
 `A->B button &&` *ConditionUsage* will be true if:
 	- Expected Result: `True` -> the result of the *Condition* is true,
 	- Condition: `AtoBbuttonCondition` (AtoBbuttonCondition.tres) is fulfilled,
