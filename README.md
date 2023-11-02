@@ -70,6 +70,7 @@ The conditions determine which state the state machine enters.
 ![enter image description here](https://github.com/Trufiadok/StateMachine-wResCfg-Demo/blob/main/Docs/B%20to%20C%20state%20by%20j%20greater%20than%20100%20and%20BtoC%20button.png)
 
 ![enter image description here](https://github.com/Trufiadok/StateMachine-wResCfg-Demo/blob/main/Docs/AtoB%20TransitionItem.png)
+
 The image above shows the *TransitionItem* controlling from state A to state B.
 From State: `A_State` (A_State.tres)
 To State: `B_State` (B_State.tres)
