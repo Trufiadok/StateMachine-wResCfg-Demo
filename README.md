@@ -89,6 +89,6 @@ If the logical result of the elements of the *ConditionUsage* array is true, the
 
 `A->B button &&` *ConditionUsage* will be true if:
 - Expected Result: `True` -> the result of the *Condition* is true,
-- Condition: `AtoBbuttonCondition` (AtoBbuttonCondition.tres) is fulfilled the class (ButtonStatusConditionRES.cs) belonging to *AtoBbuttonCondition.tres* describes how the result of the condition is formed:  `bool state = demoStateMachine.AtoBbutton;`,
+- Condition: `AtoBbuttonCondition` (AtoBbuttonCondition.tres) is fulfilled. The class (ButtonStatusConditionRES.cs) belonging to *AtoBbuttonCondition.tres* describes how the result of the condition is formed:  `bool state = demoStateMachine.AtoBbutton;`,
 - Operator: `And` -> logical connection with the following *ConditionUsage*.
 (In this case it doesn't matter since there is no next element)
