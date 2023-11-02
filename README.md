@@ -79,17 +79,16 @@ To State: `B_State` (B_State.tres)
 
 Actions: `SetBLamp` (SetBLamp.tres) 'action for B_State'
 A class (SetStateLampRES.cs) belonging to *SetBlamp.tres* describes what to do when:
-	- if it enter the state: `OnStateEnter()` -> `demoStateMachine.bLamp = true;`
-	- if it exit the state: `OnStateExit()` -> `demoStateMachine.bLamp = false;`
-	- if it is in the state: `OnUpdate()` -> *in this case it does nothing*
+- if it enter the state: `OnStateEnter()` -> `demoStateMachine.bLamp = true;`
+- if it exit the state: `OnStateExit()` -> `demoStateMachine.bLamp = false;`
+- if it is in the state: `OnUpdate()` -> *in this case it does nothing*
 
 The condition for crossing is the following condition: i > 10 && j < 20 || A->B button
 
 If the logical result of the elements of the *ConditionUsage* array is true, then the transition occurs.
 
 `A->B button &&` *ConditionUsage* will be true if:
-	- Expected Result: `True` -> the result of the *Condition* is true,
-	- Condition: `AtoBbuttonCondition` (AtoBbuttonCondition.tres) is fulfilled,
-	The class (ButtonStatusConditionRES.cs) belonging to *AtoBbuttonCondition.tres* describes how the result of the condition is formed:  `bool state = demoStateMachine.AtoBbutton;`
-	- Operator: `And` -> logical connection with the following *ConditionUsage*.
+- Expected Result: `True` -> the result of the *Condition* is true,
+- Condition: `AtoBbuttonCondition` (AtoBbuttonCondition.tres) is fulfilled the class (ButtonStatusConditionRES.cs) belonging to *AtoBbuttonCondition.tres* describes how the result of the condition is formed:  `bool state = demoStateMachine.AtoBbutton;`,
+- Operator: `And` -> logical connection with the following *ConditionUsage*.
 (In this case it doesn't matter since there is no next element)
